@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiendaMovil.Views.ShoppingCart"
+             Title="Carrito de Compras">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="FillAndExpand">
+            <StackLayout>
+                <Button x:Name="sbt" Text="Comprar Carrito" Clicked="Button_Clicked" CornerRadius="10" Margin="10,10,10,10" BackgroundColor="Green"></Button>
+                <ListView x:Name="cartListView" SeparatorVisibility="Default"
+                    SeparatorColor="Gray" Margin="5,1,5,0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding product.image_path}" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"></Image>
+                                    <Label Text="{Binding product.name}" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+                                    <Label Text="{Binding quantity, StringFormat='|C: {0}'}" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+                                    <Label x:Name="total" Text="{Binding total, StringFormat='|T: {0:C}'}" TextColor="Black" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+                                    <Button Text="Eliminar" Clicked="OnDeleteClicked" CommandParameter="{Binding .}" VerticalOptions="CenterAndExpand" HorizontalOptions="End"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <Label x:Name="total" TextColor="Black" HorizontalOptions="CenterAndExpand"></Label>
+                
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

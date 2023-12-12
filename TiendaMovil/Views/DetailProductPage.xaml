@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiendaMovil.Views.DetailProductPage"
+             Title="{Binding name}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="shopping.png" Clicked="ToolbarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout VerticalOptions="FillAndExpand" Margin="10">
+                <Image Source="{Binding image_path}" HeightRequest="200" Aspect="AspectFit" />
+
+                <Label Text="{Binding name}" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,10,0,0" />
+                <Label Text="{Binding price}" HorizontalTextAlignment="Center" FontSize="16" TextColor="Gray" Margin="0,0,0,20" />
+
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{AppThemeBinding Light=#1690F4, Dark=#AE72E7}"/>
+
+                <Label Text="Descripción" FontSize="20" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" Margin="0,20,0,10" />
+                <Label Text="{Binding description}" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" LineBreakMode="WordWrap" Margin="0,0,0,20" />
+
+                <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="{AppThemeBinding Light=#1690F4, Dark=#AE72E7}"/>
+
+                <Button Text="Agregar al Carrito" Clicked="Button_Clicked" CornerRadius="10" BackgroundColor="Green"></Button>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

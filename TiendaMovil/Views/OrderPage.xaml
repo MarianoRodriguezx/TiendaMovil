@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TiendaMovil.Views.OrderPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="FillAndExpand" Margin="10">
+            <Image Source="paloma.png" HeightRequest="300" Aspect="AspectFit" />
+
+            <Label Text="Tu Numero de Orden es:" FontSize="24" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Black" Margin="0,10,0,0" />
+            <Label Text="# 929173829834" FontSize="18" FontAttributes="Bold" HorizontalTextAlignment="Center" TextColor="Gray" Margin="0,10,0,0" />
+
+            <Button Clicked="Button_Clicked" BackgroundColor = "Blue" TextColor = "White" CornerRadius = "20" WidthRequest = "100" HeightRequest = "50" Text="Terminar" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
